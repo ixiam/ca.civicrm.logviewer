@@ -1,4 +1,4 @@
-{crmButton p='civicrm/admin/logviewer' q='reset=1' icon='refresh'}{ts}Refresh{/ts}{/crmButton}
+{crmButton p='civicrm/admin/logviewer' q='reset=1' icon='refresh'}{ts}Refresh{/ts}{/crmButton}&nbsp;&nbsp;&nbsp;
 {crmButton p='civicrm/admin/logviewer/download' q='reset=1' icon='download'}{ts}Download Log File{/ts}{/crmButton}
 
 <p>{ts 1=$currentTime}The current time is %1.{/ts}</p>

@@ -10,7 +10,7 @@ class CRM_Logviewer_Page_LogViewer extends CRM_Core_Page {
     $this->assign('fileName', $logFileName);
     $entries = [];
 
-    if ($handle = @fopen($logFileName,'r')) {
+    if ($handle = @fopen($logFileName, 'r')) {
       $line = 0;
       while (!feof($handle)) {
         $line++;
@@ -19,9 +19,9 @@ class CRM_Logviewer_Page_LogViewer extends CRM_Core_Page {
           // Ex: 2023-12-25 09:00:00-0400
           if (preg_match('/^([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}.\d+)/', $dd, $matches)) {
             $date = $matches[1];
-            $entry_url = CRM_Utils_System::url('civicrm/admin/logviewer/logentry', $query = 'lineNumber='.$line);
+            $entry_url = CRM_Utils_System::url('civicrm/admin/logviewer/logentry', $query = 'lineNumber=' . $line);
             $entries[$line] = [
-              'lineNumber' => '<a href="'.$entry_url.'">'.$line.'</a>',
+              'lineNumber' => '<a href="' . $entry_url . '">' . $line . '</a>',
               'dateTime' => $date,
               'message' => substr($dd, strlen($date)),
             ];
